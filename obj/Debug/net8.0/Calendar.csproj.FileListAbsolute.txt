@@ -96,3 +96,5 @@ E:\Semester 2\OOP\Calendar\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Works
 E:\Semester 2\OOP\Calendar\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\Semester 2\OOP\Calendar\obj\Debug\net8.0\Calendar.csproj.AssemblyReference.cache
 E:\Semester 2\OOP\Calendar\obj\Debug\net8.0\Calendar.csproj.Up2Date
+E:\Semester 2\OOP\Calendar\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Semester 2\OOP\Calendar\obj\Debug\net8.0\Calendar.sourcelink.json

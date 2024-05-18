@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "MRQluMgrcKjtikDCKyj2NssVXFgAc3JH+2OMDRVZIkJ/DWVVrjw21R8I9apl8Q4UTwfeqalDAKjKQMdWrrAcWg==",
+  "dgSpecHash": "SpMD2KAVmjEwTG9Rl9XKWQo96KByUNbm0nGtJ8XdkpDKxAambY3Oh/OxUmgrztiC8XFlioDydV54q5Lt5dUfcQ==",
   "success": true,
   "projectFilePath": "E:\\Semester 2\\OOP\\Calendar\\Calendar.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,7 @@
     "C:\\Users\\vnine\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\vnine\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\vnine\\.nuget\\packages\\mysqlconnector\\2.3.5\\mysqlconnector.2.3.5.nupkg.sha512",
+    "C:\\Users\\vnine\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\vnine\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\8.0.2\\pomelo.entityframeworkcore.mysql.8.0.2.nupkg.sha512",
     "C:\\Users\\vnine\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\vnine\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",

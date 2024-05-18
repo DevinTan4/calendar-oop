@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class Location
 {
@@ -13,14 +15,28 @@ public class Event : ICloneable
   public int EventId { get; set; }
   public DateTime Date { get; set; }
   public string Description { get; set; }
-  public Location Location { get; set; } // Properti referensi
+  public Location Location { get; set; }
 
   // Shallow copy
   public object Clone()
   {
     return this.MemberwiseClone();
   }
+
+  // Deep copy using JSON serialization
+  public Event DeepCopy()
+  {
+    var serialized = JsonConvert.SerializeObject(this);
+    var deepCopiedEvent = JsonConvert.DeserializeObject<Event>(serialized);
+    deepCopiedEvent.EventId = 0;
+    if (deepCopiedEvent.Location != null)
+    {
+      deepCopiedEvent.Location.LocationId = 0;
+    }
+    return deepCopiedEvent;
+  }
 }
+
 
 public class AppDbContext : DbContext
 {
@@ -196,11 +212,30 @@ public class Program
     {
       using (var context = new AppDbContext())
       {
-        var ev = context.Events.Include(e => e.Location).FirstOrDefault(e => e.EventId == eventId);
-        if (ev != null)
+        var originalEvent = context.Events.Include(e => e.Location).FirstOrDefault(e => e.EventId == eventId);
+        if (originalEvent != null)
         {
-          var clonedEvent = (Event)ev.Clone();
-          clonedEvent.EventId = 0; // Ensure the new event gets a new ID
+          Console.Write("Choose copy type (1. Shallow, 2. Deep): ");
+          var copyType = Console.ReadLine();
+
+          Event clonedEvent = null;
+
+          if (copyType == "1")
+          {
+            clonedEvent = (Event)originalEvent.Clone();
+          }
+          else if (copyType == "2")
+          {
+            clonedEvent = originalEvent.DeepCopy();
+            context.Locations.Add(clonedEvent.Location);
+          }
+          else
+          {
+            Console.WriteLine("Invalid copy type selected.");
+            return;
+          }
+
+          clonedEvent.EventId = 0;
           context.Events.Add(clonedEvent);
           context.SaveChanges();
           Console.WriteLine("Event duplicated successfully!");
